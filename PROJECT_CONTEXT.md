@@ -143,7 +143,7 @@ orders {
 ```env
 DATABASE_URL=postgresql://neondb_owner:npg_...@ep-...neon.tech/neondb?sslmode=require
 WHATSAPP_NUMBER=201147613886
-ADMIN_PASSWORD=hadi2026
+ADMIN_PASSWORD=bibo2026
 ```
 
 ### Vercel (Environment Variables)

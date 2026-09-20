@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { LayoutDashboard, FolderOpen, ShoppingCart, LogOut, Lock } from "lucide-react";
+import { LayoutDashboard, FolderOpen, ShoppingCart, LogOut, Lock, Home } from "lucide-react";
 
 const adminLinks = [
   { href: "/admin", label: "لوحة التحكم", icon: LayoutDashboard },
@@ -31,7 +31,7 @@ export default function AdminLayout({
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "hadi2026") {
+    if (password === "bibo2026") {
       sessionStorage.setItem("admin-auth", "true");
       setIsAuthenticated(true);
       setError("");
@@ -86,7 +86,9 @@ export default function AdminLayout({
       {/* Sidebar */}
       <aside className="w-64 bg-[#141414] border-l border-[#2a2a2a] p-6 hidden md:block">
         <div className="mb-8">
-          <img src="/logo.jpeg" alt="هادي الفضيلي" className="w-16 h-16 rounded-full object-cover mx-auto" />
+          <a href="/" className="block">
+            <img src="/logo.jpeg" alt="هادي الفضيلي" className="w-16 h-16 rounded-full object-cover mx-auto" />
+          </a>
           <h2 className="text-center text-[#c62828] font-bold mt-3">لوحة التحكم</h2>
         </div>
 
@@ -111,13 +113,20 @@ export default function AdminLayout({
           })}
         </nav>
 
-        <button
-          onClick={handleLogout}
-          className="mt-8 w-full flex items-center gap-3 px-4 py-3 rounded-lg text-[#a0a0a0] hover:bg-red-500/10 hover:text-red-500 transition-colors"
-        >
-          <LogOut size={20} />
-          <span>تسجيل الخروج</span>
-        </button>
+        <div className="mt-8 space-y-2">
+          <a href="/" target="_blank"
+            className="flex items-center gap-3 px-4 py-3 rounded-lg text-[#a0a0a0] hover:bg-[#1e1e1e] hover:text-white transition-colors">
+            <Home size={20} />
+            <span>عرض الموقع</span>
+          </a>
+          <button
+            onClick={handleLogout}
+            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-[#a0a0a0] hover:bg-red-500/10 hover:text-red-500 transition-colors"
+          >
+            <LogOut size={20} />
+            <span>تسجيل الخروج</span>
+          </button>
+        </div>
       </aside>
 
       {/* Mobile nav */}

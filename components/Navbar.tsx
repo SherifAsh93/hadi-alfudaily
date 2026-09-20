@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { socialLinks } from "@/lib/data";
+import Link from "next/link";
 
 const navLinks = [
   { href: "#portfolio", label: "الأعمال" },
@@ -36,10 +37,10 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="flex items-center gap-3">
+          <Link href="/admin" className="flex items-center gap-3">
             <img src="/logo.jpeg" alt="هادي الفضيلي" className="w-10 h-10 rounded-full object-cover" />
             <span className="font-bold text-lg text-[#c62828]">هادي الفضيلي</span>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
