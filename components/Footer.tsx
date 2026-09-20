@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, Mail, Phone, MapPin } from "lucide-react";
 import { socialLinks, siteConfig } from "@/lib/data";
 
 const socialIcons = [
@@ -45,42 +45,89 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-4 bg-[#0a0a0a] border-t border-[#2a2a2a]">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo & Name */}
-          <div className="flex items-center gap-3">
-            <img src="/logo.jpeg" alt="هادي الفضيلي" className="w-12 h-12 rounded-full object-cover" />
-            <div>
-              <div className="font-bold text-lg text-[#c62828]">{siteConfig.name}</div>
-              <div className="text-sm text-[#a0a0a0]">مخرج ومنتج فيديو</div>
+    <footer className="bg-[#0a0a0a] border-t border-[#2a2a2a]">
+      {/* Main footer */}
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img src="/logo.jpeg" alt="هادي الفضيلي" className="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <div className="font-bold text-lg text-[#c62828]">{siteConfig.name}</div>
+                <div className="text-sm text-[#a0a0a0]">مخرج ومنتج فيديو</div>
+              </div>
+            </div>
+            <p className="text-[#808080] text-sm leading-relaxed mb-4">
+              مخرج سوداني مقيم بالقاهرة. متخصص في إنتاج الفيديو والتصميم الجرافيكي والإنتاج بالذكاء الاصطناعي.
+            </p>
+          </div>
+
+          {/* Quick links */}
+          <div>
+            <h3 className="font-bold text-white mb-4">روابط سريعة</h3>
+            <div className="space-y-2">
+              {[
+                { href: "#services", label: "الخدمات" },
+                { href: "#about", label: "من أنا" },
+                { href: "#portfolio", label: "الأعمال" },
+                { href: "#order", label: "طلب مشروع" },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block text-[#808080] hover:text-[#c62828] transition-colors text-sm"
+                >
+                  {link.label}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Social links */}
-          <div className="flex gap-4">
-            {socialIcons.map((social) => (
-              <motion.a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-[#141414] border border-[#2a2a2a] rounded-lg flex items-center justify-center text-[#a0a0a0] hover:text-[#c62828] hover:border-[#c62828]/50 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                title={social.name}
-              >
-                {social.icon}
-              </motion.a>
-            ))}
+          {/* Contact */}
+          <div>
+            <h3 className="font-bold text-white mb-4">تواصل معي</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-sm text-[#808080]">
+                <Phone size={16} className="text-[#c62828] shrink-0" />
+                <span dir="ltr">{siteConfig.phone}</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-[#808080]">
+                <MapPin size={16} className="text-[#c62828] shrink-0" />
+                <span>القاهرة، مصر</span>
+              </div>
+            </div>
+
+            {/* Social links */}
+            <div className="flex gap-3 mt-6">
+              {socialIcons.map((social) => (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-[#141414] border border-[#2a2a2a] rounded-lg flex items-center justify-center text-[#808080] hover:text-[#c62828] hover:border-[#c62828]/50 transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  title={social.name}
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-[#2a2a2a] text-center">
-          <p className="text-[#a0a0a0] text-sm flex items-center justify-center gap-1">
-            © 2026 {siteConfig.name} | صنع بـ
-            <Heart size={14} className="text-[#c62828] fill-[#c62828]" />
+      {/* Copyright */}
+      <div className="border-t border-[#2a2a2a]">
+        <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[#666] text-sm">
+            © 2026 {siteConfig.name}. جميع الحقوق محفوظة.
+          </p>
+          <p className="text-[#666] text-sm flex items-center gap-1">
+            صنع بـ
+            <Heart size={12} className="text-[#c62828] fill-[#c62828]" />
           </p>
         </div>
       </div>

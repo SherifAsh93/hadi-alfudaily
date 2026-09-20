@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown, Play, Camera, Film, Clapperboard } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
 export default function Hero() {
@@ -17,68 +17,132 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{ backgroundImage: "url('/hero.jpg')" }}
       />
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/60 to-[#0a0a0a]" />
+
+      {/* Cinematic overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-[#0a0a0a]/40 to-[#0a0a0a]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/60 via-transparent to-[#0a0a0a]/60" />
+
+      {/* Animated red accent lines */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#c62828] to-transparent opacity-40" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#c62828]/30 to-transparent" />
+
+      {/* Floating icons */}
+      <motion.div
+        className="absolute top-24 right-12 text-[#c62828]/20 hidden lg:block"
+        animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
+        transition={{ duration: 5, repeat: Infinity }}
+      >
+        <Camera size={60} />
+      </motion.div>
+      <motion.div
+        className="absolute bottom-32 left-12 text-[#c62828]/20 hidden lg:block"
+        animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
+        transition={{ duration: 6, repeat: Infinity, delay: 1 }}
+      >
+        <Film size={50} />
+      </motion.div>
+      <motion.div
+        className="absolute top-40 left-1/4 text-[#c62828]/10 hidden lg:block"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+      >
+        <Clapperboard size={40} />
+      </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
         >
-          {/* Logo */}
-          <motion.img
-            src="/logo.jpeg"
-            alt="هادي الفضيلي"
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full object-cover border-4 border-[#c62828]/50"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+          {/* Badge */}
+          <motion.div
+            className="inline-flex items-center gap-2 bg-[#c62828]/10 border border-[#c62828]/30 rounded-full px-5 py-2 mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-          />
+          >
+            <div className="w-2 h-2 bg-[#c62828] rounded-full animate-pulse" />
+            <span className="text-[#c62828] text-sm font-medium">مخرج ومنتج فيديو</span>
+          </motion.div>
+
+          {/* Logo */}
+          <motion.div
+            className="relative inline-block mb-8"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, type: "spring" }}
+          >
+            <div className="relative">
+              <motion.img
+                src="/logo.jpeg"
+                alt="هادي الفضيلي"
+                className="w-36 h-36 md:w-44 md:h-44 mx-auto rounded-full object-cover border-[3px] border-[#c62828]/50"
+                whileHover={{ scale: 1.05 }}
+              />
+              <div className="absolute inset-0 rounded-full bg-[#c62828]/10 animate-pulse" />
+            </div>
+          </motion.div>
 
           {/* Name */}
           <motion.h1
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4"
-            initial={{ opacity: 0, y: 20 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 leading-tight"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
             <span className="text-gradient-gold">{siteConfig.name}</span>
           </motion.h1>
 
+          {/* Decorative line */}
+          <motion.div
+            className="w-24 h-1 bg-gradient-to-r from-transparent via-[#c62828] to-transparent mx-auto mb-6"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          />
+
           {/* Title */}
           <motion.p
-            className="text-xl md:text-2xl text-[#a0a0a0] mb-8"
+            className="text-xl md:text-2xl lg:text-3xl text-[#a0a0a0] mb-6 font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
           >
             مخرج | منتج فيديو | مصمم جرافيكي
           </motion.p>
 
-          {/* Stats */}
-          <motion.div
-            className="flex justify-center gap-8 md:gap-12 mb-12"
+          {/* Subtitle */}
+          <motion.p
+            className="text-base md:text-lg text-[#666] mb-12 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.85 }}
           >
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#c62828]">+3</div>
-              <div className="text-sm text-[#a0a0a0]">سنوات خبرة</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#c62828]">+50</div>
-              <div className="text-sm text-[#a0a0a0]">مشروع</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-[#c62828]">+100</div>
-              <div className="text-sm text-[#a0a0a0]">عميل</div>
-            </div>
+            أبدع في صناعة المحتوى البصري المبهر باستخدام أحدث تقنيات الذكاء الاصطناعي والإنتاج السينمائي
+          </motion.p>
+
+          {/* Stats row */}
+          <motion.div
+            className="flex justify-center gap-6 md:gap-12 mb-14"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.95 }}
+          >
+            {[
+              { value: "+3", label: "سنوات خبرة" },
+              { value: "+50", label: "مشروع منجز" },
+              { value: "+100", label: "عميل سعيد" },
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-[#c62828]">{stat.value}</div>
+                <div className="text-xs md:text-sm text-[#808080] mt-1">{stat.label}</div>
+              </div>
+            ))}
           </motion.div>
 
           {/* CTA Buttons */}
@@ -86,21 +150,25 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
           >
-            <button
+            <motion.button
               onClick={scrollToOrder}
-              className="gradient-gold text-white px-8 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity animate-pulse-gold"
+              className="gradient-gold text-white px-10 py-4 rounded-xl font-bold text-lg hover:opacity-90 transition-opacity animate-pulse-gold flex items-center justify-center gap-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
               طلب مشروع
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={scrollToPortfolio}
-              className="flex items-center justify-center gap-2 border-2 border-[#c62828] text-[#c62828] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#c62828]/10 transition-colors"
+              className="flex items-center justify-center gap-2 border-2 border-[#c62828] text-[#c62828] px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#c62828]/10 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Play size={20} />
               مشاهدة الأعمال
-            </button>
+            </motion.button>
           </motion.div>
         </motion.div>
       </div>
@@ -115,8 +183,10 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
+          className="flex flex-col items-center gap-2"
         >
-          <ChevronDown size={32} className="text-[#c62828]" />
+          <span className="text-xs text-[#666]">اكتشف المزيد</span>
+          <ChevronDown size={24} className="text-[#c62828]" />
         </motion.div>
       </motion.div>
     </section>

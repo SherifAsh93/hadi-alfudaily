@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Configure image domains if needed for external images
+  serverExternalPackages: ["@neondatabase/serverless"],
 };
 
 export default nextConfig;

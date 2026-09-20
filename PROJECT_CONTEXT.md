@@ -3,7 +3,10 @@
 **Client:** Hadi Alfudaily (هادي الفضيلي)
 **Developer:** Sherif (WebistryDev)
 **Started:** September 19, 2026
-**Status:** In Development
+**Status:** Deployed
+**Live URL:** https://hadi-alfudaily.vercel.app
+**GitHub:** https://github.com/SherifAsh93/hadi-alfudaily
+**Database:** Neon PostgreSQL (Vercel integration)
 
 ---
 
@@ -136,11 +139,18 @@ orders {
 
 ## Environment Variables
 
+### Local (.env.local)
 ```env
-DATABASE_URL=postgresql://...
+DATABASE_URL=postgresql://neondb_owner:npg_...@ep-...neon.tech/neondb?sslmode=require
 WHATSAPP_NUMBER=201147613886
 ADMIN_PASSWORD=hadi2026
 ```
+
+### Vercel (Environment Variables)
+Set these in Vercel → Settings → Environment Variables:
+- `DATABASE_URL` — Neon connection string
+- `WHATSAPP_NUMBER` — `201147613886`
+- `ADMIN_PASSWORD` — `hadi2026`
 
 ---
 
@@ -217,12 +227,14 @@ hadi-alfudaily/
 
 ## Next Steps
 
-1. Create Neon database and update DATABASE_URL
-2. Run `npm install`
-3. Run `npm run db:push` to create tables
-4. Test locally with `npm run dev`
-5. Deploy to Vercel
+1. ~~Create Neon database~~ ✓
+2. ~~Run `npm install`~~ ✓
+3. ~~Create database tables~~ ✓
+4. ~~Deploy to Vercel~~ ✓
+5. Add portfolio items via admin panel
+6. Test order form with WhatsApp
+7. Custom domain (optional)
 
 ---
 
-*Last updated: September 19, 2026*
+*Last updated: September 20, 2026*
