@@ -87,7 +87,7 @@ export const processSteps = [
   {
     number: "02",
     title: "التخطيط",
-    description: "نضع خطة إنتاجية متكاملة تشمل السيناريو وال蚪 storyboard والجدول الزمني",
+    description: "نضع خطة إنتاجية متكاملة تشمل السيناريو والقصة والStoryboard والجدول الزمني",
   },
   {
     number: "03",

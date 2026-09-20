@@ -190,9 +190,14 @@ hadi-alfudaily/
 │       └── get-orders.ts
 ├── components/
 │   ├── Hero.tsx
-│   ├── Portfolio.tsx
+│   ├── Stats.tsx
 │   ├── Services.tsx
+│   ├── Showcase.tsx
+│   ├── Process.tsx
 │   ├── About.tsx
+│   ├── Portfolio.tsx
+│   ├── Testimonials.tsx
+│   ├── CtaBanner.tsx
 │   ├── OrderForm.tsx
 │   ├── FloatingWhatsApp.tsx
 │   ├── Navbar.tsx
@@ -205,11 +210,12 @@ hadi-alfudaily/
 │   └── utils.ts
 ├── public/
 │   ├── logo.jpeg
-│   └── projects/
+│   ├── hero.jpg
+│   ├── icon.png
+│   └── placeholder.svg
 ├── package.json
 ├── tsconfig.json
 ├── next.config.ts
-├── tailwind.config.ts
 ├── postcss.config.mjs
 ├── drizzle.config.ts
 └── .env.local
@@ -220,7 +226,7 @@ hadi-alfudaily/
 ## Admin Access
 
 - **URL:** `/admin`
-- **Password:** `hadi2026`
+- **Password:** `bibo2026`
 - **Auth:** Client-side sessionStorage
 
 ---

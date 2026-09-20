@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { socialLinks } from "@/lib/data";
-import Link from "next/link";
 
 const navLinks = [
   { href: "#portfolio", label: "الأعمال" },
@@ -16,6 +16,9 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+  const clickCountRef = useRef(0);
+  const clickTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,22 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    clickCountRef.current += 1;
+
+    if (clickCountRef.current === 1) {
+      clickTimerRef.current = setTimeout(() => {
+        clickCountRef.current = 0;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 400);
+    } else if (clickCountRef.current === 3) {
+      if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+      clickCountRef.current = 0;
+      router.push("/admin");
+    }
+  };
 
   return (
     <motion.nav
@@ -36,11 +55,11 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/admin" className="flex items-center gap-3">
+          {/* Logo - single click = scroll top, triple click = /admin */}
+          <a href="#" onClick={handleLogoClick} className="flex items-center gap-3 select-none">
             <img src="/logo.jpeg" alt="هادي الفضيلي" className="w-10 h-10 rounded-full object-cover" />
             <span className="font-bold text-lg text-[#c62828]">هادي الفضيلي</span>
-          </Link>
+          </a>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Mail, Phone, MapPin } from "lucide-react";
+import { Heart, Phone, MapPin } from "lucide-react";
 import { socialLinks, siteConfig } from "@/lib/data";
 
 const socialIcons = [

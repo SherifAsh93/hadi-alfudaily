@@ -32,18 +32,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl" className={cairo.variable}>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                document.documentElement.dir = 'rtl';
-                document.documentElement.lang = 'ar';
-              })();
-            `,
-          }}
-        />
-      </head>
       <body className="antialiased">
         {children}
       </body>

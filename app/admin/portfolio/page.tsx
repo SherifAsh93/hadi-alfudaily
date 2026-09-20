@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Plus, Trash2, ExternalLink, Loader2, X, GripVertical, Image as ImageIcon, Film } from "lucide-react";
+import { Plus, Trash2, ExternalLink, Loader2, X, Image as ImageIcon, Film } from "lucide-react";
 
 interface PortfolioItem {
   id: number;
@@ -129,7 +129,7 @@ export default function PortfolioManager() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#a0a0a0] mb-1.5">الترتيب (رقم越高 = يظهر أولاً)</label>
+                <label className="block text-sm font-medium text-[#a0a0a0] mb-1.5">الترتيب (الأعلى = يظهر أولاً)</label>
                 <input type="number" value={formData.order} onChange={(e) => setFormData({ ...formData, order: parseInt(e.target.value) || 0 })}
                   className="w-full bg-[#1e1e1e] border border-[#2a2a2a] rounded-lg px-4 py-2.5 text-white focus:border-[#c62828] focus:outline-none transition-colors" />
               </div>
@@ -201,7 +201,7 @@ export default function PortfolioManager() {
                   </div>
                 ) : (
                   <img src={item.url} alt={item.title} className="w-full h-full object-cover"
-                    onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.jpg"; }} />
+                    onError={(e) => { (e.target as HTMLImageElement).src = "/placeholder.svg"; }} />
                 )}
               </div>
 

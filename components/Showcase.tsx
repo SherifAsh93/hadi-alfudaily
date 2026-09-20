@@ -19,7 +19,7 @@ export default function Showcase() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-gradient-gold">projects مميزة</span>
+            <span className="text-gradient-gold">مشاريع مميزة</span>
           </h2>
           <p className="text-[#a0a0a0] text-lg">أبرز الأعمال التي أفخر بها</p>
         </motion.div>
