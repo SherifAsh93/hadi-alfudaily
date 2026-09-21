@@ -81,9 +81,11 @@ A dark/cinematic portfolio website for Sudanese filmmaker **Hadi Alfudaily** to 
 
 ### Public Pages
 - **Hero Section** - Cinematic full-screen with logo + CTA
-- **Portfolio Grid** - Filterable gallery (images + videos)
-- **Services Section** - 6 service cards with icons
-- **About Section** - Bio and stats
+- **Portfolio Grid** - Filterable gallery (films, ads, music videos, virtual production, visual experiences)
+- **Services Section** - 6 service cards with icons (retitled "ماذا أقدّم")
+- **Process Section** - 6-step workflow
+- **About Section** - Extended bio and stats
+- **Showcase** - Featured works (المَرَدَة + قاش مان) with images
 - **Order Form** - Name + Phone + Category + Description
 - **Floating WhatsApp** - Fixed contact button
 - **Footer** - Social links
@@ -243,4 +245,4 @@ hadi-alfudaily/
 
 ---
 
-*Last updated: September 20, 2026*
+*Last updated: September 21, 2026*

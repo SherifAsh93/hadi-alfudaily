@@ -47,7 +47,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.5, type: "spring" }}
             >
-              مخرج سينمائي
+              مخرج سينمائي بالذكاء الاصطناعي
             </motion.div>
 
             {/* Floating mini cards */}
@@ -84,19 +84,28 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-              مخرج ومبدع شغوف<br />
-              <span className="text-gradient-gold">بصناعة المحتوى البصري</span>
+              مؤلف ومخرج سينمائي<br />
+              <span className="text-gradient-gold">متخصص في السينما الافتراضية</span>
             </h3>
 
-            <p className="text-[#a0a0a0] text-lg leading-relaxed mb-8">
+            <p className="text-[#a0a0a0] text-lg leading-relaxed mb-4">
               {aboutText.bio}
+            </p>
+            <p className="text-[#a0a0a0] text-base leading-relaxed mb-4">
+              {aboutText.bioExtra}
+            </p>
+            <p className="text-[#a0a0a0] text-base leading-relaxed mb-4">
+              {aboutText.bioExtra2}
+            </p>
+            <p className="text-[#a0a0a0] text-base leading-relaxed mb-8">
+              {aboutText.bioExtra3}
             </p>
 
             {/* Key highlights */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               {[
-                { icon: Play, text: "قاش مان - سوبر هيرو سوداني" },
-                { icon: Film, text: "إنتاج سينمائي احترافي" },
+                { icon: Play, text: "المَرَدَة - فيلم سينمائي سوداني" },
+                { icon: Film, text: "قاش مان - أول سوبر هيرو عربي" },
                 { icon: Sparkles, text: "متخصص بالذكاء الاصطناعي" },
                 { icon: Award, text: "خبرة +3 سنوات" },
               ].map((item, i) => {

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Video, Palette, Sparkles, Music, Clapperboard, Layers, ArrowLeft } from "lucide-react";
+import { Video, Palette, Sparkles, Music, Clapperboard, Layers, ArrowLeft, PenTool } from "lucide-react";
 import { services } from "@/lib/data";
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -11,6 +11,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Music: <Music size={28} />,
   Clapperboard: <Clapperboard size={28} />,
   Layers: <Layers size={28} />,
+  PenTool: <PenTool size={28} />,
 };
 
 export default function Services() {
@@ -28,9 +29,9 @@ export default function Services() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-gradient-gold">خدماتي</span>
+            <span className="text-gradient-gold">ماذا أقدّم</span>
           </h2>
-          <p className="text-[#a0a0a0] text-lg">خدمات إنتاجية متكاملة بأعلى مستوى من الجودة</p>
+          <p className="text-[#a0a0a0] text-lg">خدمات إبداعية متكاملة في صناعة السينما وال泮حتوى البصري</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

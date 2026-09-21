@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, PenTool, Video, CheckCircle } from "lucide-react";
+import { MessageSquare, PenTool, Video, CheckCircle, Lightbulb, Clapperboard } from "lucide-react";
 import { processSteps } from "@/lib/data";
 
-const stepIcons = [MessageSquare, PenTool, Video, CheckCircle];
+const stepIcons = [Lightbulb, PenTool, Clapperboard, Video, CheckCircle, MessageSquare];
 
 export default function Process() {
   return (
@@ -20,12 +20,12 @@ export default function Process() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-gradient-gold">كيف أعمل</span>
           </h2>
-          <p className="text-[#a0a0a0] text-lg">خطوات واضحة لتحقيق أفضل نتيجة</p>
+          <p className="text-[#a0a0a0] text-lg">من الفكرة إلى النسخة النهائية - رحلة إبداعية متكاملة</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {/* Connection line */}
-          <div className="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-[#c62828]/0 via-[#c62828]/50 to-[#c62828]/0" />
+          <div className="hidden md:block absolute top-16 left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-[#c62828]/0 via-[#c62828]/50 to-[#c62828]/0" />
 
           {processSteps.map((step, index) => {
             const Icon = stepIcons[index];

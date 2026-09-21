@@ -29,11 +29,11 @@ export default function CtaBanner() {
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6">
             <span className="text-gradient-gold">جاهز لتحويل فكرتك</span>
             <br />
-            <span className="text-white">لمحتوى بصري مبهر؟</span>
+            <span className="text-white">لتجربة سينمائية؟</span>
           </h2>
 
           <p className="text-[#a0a0a0] text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-            تواصل معي الآن ودعنا نبدأ رحلة صناعة محتوى يتحدث بلغة الإبداع والاحترافية
+            دعنا نحولها إلى محتوى بصري يتحدث بلغة السينما والإبداع
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

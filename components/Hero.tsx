@@ -67,7 +67,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="w-2 h-2 bg-[#c62828] rounded-full animate-pulse" />
-            <span className="text-[#c62828] text-sm font-medium">مخرج ومنتج فيديو</span>
+            <span className="text-[#c62828] text-sm font-medium">AI Film Director & Writer</span>
           </motion.div>
 
           {/* Logo */}
@@ -108,12 +108,12 @@ export default function Hero() {
 
           {/* Title */}
           <motion.p
-            className="text-xl md:text-2xl lg:text-3xl text-[#a0a0a0] mb-6 font-light"
+            className="text-xl md:text-2xl lg:text-3xl text-[#a0a0a0] mb-4 font-light"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            مخرج | منتج فيديو | مصمم جرافيكي
+            مؤلف ومخرج سينمائي في مجال السينما الافتراضية
           </motion.p>
 
           {/* Subtitle */}
@@ -123,7 +123,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.85 }}
           >
-            أبدع في صناعة المحتوى البصري المبهر باستخدام أحدث تقنيات الذكاء الاصطناعي والإنتاج السينمائي
+            أتعامل مع الذكاء الاصطناعي كأداة لصناعة السينما، وليس كبديل عن الرؤية الإخراجية
           </motion.p>
 
           {/* Stats row */}
