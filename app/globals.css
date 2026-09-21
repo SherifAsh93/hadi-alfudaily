@@ -17,6 +17,10 @@ html {
   scroll-behavior: smooth;
 }
 
+a, button, [role="button"], input[type="submit"], input[type="button"], label[for], [onclick], .cursor-pointer {
+  cursor: pointer;
+}
+
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
